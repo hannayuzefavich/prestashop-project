@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-10-23 01:18:08
+/* Smarty version 3.1.48, created on 2024-10-31 19:23:03
   from 'module:psfeaturedproductsviewste' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_671832b043d9f6_89617428',
+  'unifunc' => 'content_6723cb07164878_66860176',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -42,7 +42,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   ),
   'cache_lifetime' => 31536000,
 ),true)) {
-function content_671832b043d9f6_89617428 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6723cb07164878_66860176 (Smarty_Internal_Template $_smarty_tpl) {
 ?><section class="featured-products clearfix">
   <h2 class="h2 products-section-title text-uppercase">
     Popular Products
@@ -102,13 +102,13 @@ function content_671832b043d9f6_89617428 (Smarty_Internal_Template $_smarty_tpl)
                       <div class="product-price-and-shipping">
                               
 
-                <span class="regular-price" aria-label="Regular price">zł29.40</span>
+                <span class="regular-price" aria-label="Regular price">zł122.88</span>
                                   <span class="discount-percentage discount-product">-20%</span>
                               
               
 
               <span class="price" aria-label="Price">
-                                                  zł23.52
+                                                  zł98.30
                               </span>
 
               
