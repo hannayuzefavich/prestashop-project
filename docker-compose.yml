@@ -10,6 +10,7 @@ services:
       - MYSQL_PASSWORD=prestashop
     volumes:
       - ./mysql:/var/lib/mysql
+      - ./mysql-dump.sql:/docker-entrypoint-initdb.d/mysql-dump.sql:ro
     expose:
       - 3306
     networks:
