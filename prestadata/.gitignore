@@ -10,9 +10,6 @@
 *.sql.gz
 *.tar.gz
 
-# Временные файлы изображений
-/img/tmp/
-
 # Кэш
 /var/cache/*
 !/var/cache/.gitkeep
