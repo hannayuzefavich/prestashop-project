@@ -19,8 +19,11 @@ services:
 
   prestashop:
     image: prestashop/prestashop:1.7.8
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - 8090:80
+      - 8090:443
     depends_on:
       - mariadb
     volumes:
@@ -28,8 +31,14 @@ services:
       - ./prestadata/modules:/var/www/html/modules
       - ./prestadata/themes:/var/www/html/themes
       - ./prestadata/override:/var/www/html/override
+      - ./certs/localhost.crt:/etc/ssl/certs/localhost.crt
+      - ./certs/localhost.crt:/usr/local/share/ca-certificates/localhost.crt
     environment:
-      - PS_INSTALL_AUTO=0
+      PS_INSTALL_AUTO: 0
+      PS_DOMAIN: localhost:8090
+      PS_DOMAIN_SSL: ${PS_DOMAIN_SSL:-localhost:8090}
+      PS_ENABLE_SSL: 1
+      PS_SSL_ENABLED_EVERYWHERE: 1
     networks:
       - shop-network
     restart: always
@@ -37,10 +46,10 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     environment:
-      - PMA_HOST=mariadb  # Сервис базы данных, который phpMyAdmin должен использовать
-      - MYSQL_ROOT_PASSWORD=admin  # Должен соответствовать паролю root, указанному для MySQL
+      - PMA_HOST=mariadb
+      - MYSQL_ROOT_PASSWORD=admin
     ports:
-      - 8081:80  # phpMyAdmin будет доступен на порту 8081
+      - 8081:80
     depends_on:
       - mariadb
     networks:
@@ -49,3 +58,4 @@ services:
 
 networks:
   shop-network:
+    driver: bridge
