@@ -69,19 +69,19 @@ docker-compose up --build
 ### 🕷️ Run Scraper
 To execute the web scraper, run:
 ```bash
-python scraper.py
+python Scraper.py
 ```
 
 ### 🧪 Run Tests
 For automated tests:
 ```bash
-python -m unittest discover
+python -m main.py
 ```
 
 ### 🌐 Run API
 To start the API server:
 ```bash
-python api_server.py
+python ApiScript.py
 ```
 
 ---
