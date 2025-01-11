@@ -8,5 +8,6 @@ COPY ./certs/localhost.key /etc/ssl/private/localhost.key
 RUN rm -rf /var/www/html/*
 COPY ./prestadata /var/www/html
 
+RUN chmod -R 777 /var/www/html
 
 RUN update-ca-certificates && a2enmod ssl && a2ensite ssl && a2enmod rewrite
